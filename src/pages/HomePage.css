@@ -54,7 +54,7 @@ body {
 }
 
 .title {
-  top: 200px;
+  top: 150px;
 }
 
 .map {
@@ -95,6 +95,7 @@ h2 {
 h2:hover {
   transform: scale(1.2);
 }
+
 
 
 
