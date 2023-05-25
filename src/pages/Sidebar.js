@@ -38,6 +38,7 @@ function Sidebar({ handleLocationClick, handleBackToMapClick, handleMyLocationCl
 
             if (iteration >= h1.dataset.value.length) {
                 clearInterval(interval);
+
             }
 
             iteration += 1 / 3;
