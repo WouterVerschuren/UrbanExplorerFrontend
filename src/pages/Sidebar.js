@@ -52,7 +52,7 @@ function Sidebar({ handleLocationClick, handleBackToMapClick, handleMyLocationCl
             </h1>
             <h2 onClick={handleBackToMapClick}>Map</h2>
             <h2 onClick={handleLocationClick}>Add Location</h2>
-            <h2 onClick={handleMyLocationClick}>MyLocation</h2>
+            <h2 onClick={handleMyLocationClick}>MyLocations</h2>
 
             <h2 className="button">login</h2>
         </div>
