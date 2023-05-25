@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import MapPage from "./pages/MapPage";
 import Sidebar from "./pages/Sidebar";
 import AddLocation from "./pages/AddLocation";
-import MyLocation from "./pages/MyLocation";
+import MyLocation from "./pages/MyLocations";
 
 function App() {
   const [location, setLocation] = useState("map");
