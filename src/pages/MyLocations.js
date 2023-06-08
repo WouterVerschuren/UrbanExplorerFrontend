@@ -6,7 +6,7 @@ function MyLocation() {
     const [data, setLocations] = useState([]);
 
     useEffect(() => {
-        fetch("https://localhost:7149/api/Location")
+        fetch("https://urbanexplorerapi.azurewebsites.net/api/location")
             .then((response) => response.json())
             .then((data) => {
                 setLocations(data);

@@ -18,7 +18,7 @@ function AddLocation() {
             Information: information,
         };
 
-        axios.post('https://localhost:7149/api/Location', data)
+        axios.post('https://urbanexplorerapi.azurewebsites.net/api/location', data)
             .then(response => {
                 console.log(response.data);
                 // Handle the response as needed
