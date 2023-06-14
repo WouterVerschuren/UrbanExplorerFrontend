@@ -1,11 +1,10 @@
 import React, { useState, useEffect } from "react";
 import { GoogleMap, Marker, useJsApiLoader } from "@react-google-maps/api";
-import { Route, Router, useNavigate, useParams } from "react-router-dom";
 import './HomePage.css';
+import LocationCrud from "./LocationCrud";
 
 function MyLocations() {
     const [data, setLocations] = useState([]);
-    const navigate = useNavigate();
 
     useEffect(() => {
         fetch("https://urbanexplorerapi.azurewebsites.net/api/location")
@@ -26,8 +25,9 @@ function MyLocations() {
         lng: 5.4820865,
     };
 
-    const handleMarkerClick = (id) => {
-        navigate(`/location/${id}`);
+    const handleLocationClick = (locationId) => {
+        // Perform the CRUD operations or any other desired action based on the locationId
+        console.log(`Location clicked with ID: ${locationId}`);
     };
 
     return isLoaded ? (
@@ -47,10 +47,12 @@ function MyLocations() {
                     key={location.id}
                     position={{ lat: location.longtitude, lng: location.latitude }}
                     icon={{
-                        url: location.checked ? "https://i.imgur.com/YlABihL.png" : "https://i.imgur.com/KInnqDU.png",
+                        url: location.checked
+                            ? "https://i.imgur.com/YlABihL.png"
+                            : "https://i.imgur.com/KInnqDU.png",
                         scaledSize: { width: 60, height: 60 },
                     }}
-                    onClick={() => handleMarkerClick(location.id)}
+                    onClick={() => handleLocationClick(location.id)}
                 />
             ))}
         </GoogleMap>
@@ -59,26 +61,4 @@ function MyLocations() {
     );
 }
 
-function LocationPage() {
-    const { id } = useParams();
-
-    // Fetch and render the location details based on the id
-
-    return (
-        <div>
-            <h1>Location {id}</h1>
-            {/* Render location details */}
-        </div>
-    );
-}
-
-function App() {
-    return (
-        <Router>
-            <Route exact path="/" component={MyLocations} />
-            <Route path="/location/:id" component={LocationPage} />
-        </Router>
-    );
-}
-
-export default App;
+export default MyLocations;

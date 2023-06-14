@@ -4,7 +4,7 @@ const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 
 let interval = null;
 
-function Sidebar({ handleLocationClick, handleBackToMapClick, handleMyLocationClick }) {
+function Sidebar({ handleLocationClick, handleBackToMapClick, handleMyLocationClick, handleLocationCrudClick }) {
     useEffect(() => {
         const h1 = document.querySelector("h1,h2");
         if (h1) {
@@ -53,6 +53,7 @@ function Sidebar({ handleLocationClick, handleBackToMapClick, handleMyLocationCl
             <h2 onClick={handleBackToMapClick}>Map</h2>
             <h2 onClick={handleLocationClick}>Add Location</h2>
             <h2 onClick={handleMyLocationClick}>MyLocations</h2>
+            <h2 onClick={handleLocationCrudClick}>LocationCrud</h2>
 
             <h2 className="button">login</h2>
         </div>
