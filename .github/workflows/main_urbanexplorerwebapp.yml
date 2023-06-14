@@ -52,5 +52,5 @@ jobs:
         with:
           app-name: 'UrbanExplorerWebApp'
           slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_F1815664AC404D8D8DE98E4333AD45D4 }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_C17805435B064426A0F22CF5FDF287AC }}
           package: .
