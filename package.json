@@ -1,6 +1,7 @@
 {
   "start": "react-scripts start --allowed-hosts=https://localhost:7149",
   "name": "urbanexplorerfrontend",
+  "@babel/plugin-proposal-private-property-in-object": "^1.0.0",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
