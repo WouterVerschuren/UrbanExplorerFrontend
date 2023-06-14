@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { GoogleMap, Marker, useJsApiLoader } from "@react-google-maps/api";
 import './HomePage.css';
-import LocationCrud from "./LocationCrud";
 
 function MyLocations() {
     const [data, setLocations] = useState([]);
