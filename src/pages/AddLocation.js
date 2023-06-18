@@ -1,6 +1,8 @@
 import './AddLocation.css';
 import React, { useState } from 'react';
 import axios from 'axios';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 function AddLocation() {
     const [name, setName] = useState('');
@@ -18,30 +20,28 @@ function AddLocation() {
             Information: information,
         };
 
-        axios.post('https://urbanexplorerapi.azurewebsites.net/api/location', data)
-            .then(response => {
+        axios
+            .post('https://urbanexplorerapi.azurewebsites.net/api/location', data)
+            .then((response) => {
                 console.log(response.data);
-                // Handle the response as needed
+                toast.success('Location added');
             })
-            .catch(error => {
+            .catch((error) => {
                 console.error(error);
-                // Handle the error as needed
+                toast.error('Error adding location');
             });
-
-        console.log('Data:', data); // Log the data object
-
-
-
     };
 
     return (
-        <div className='vakje'>
+        <div className="vakje">
             test
-            <div className='form vakje2'>
+            <div className="form vakje2">
                 <form onSubmit={handleSubmit}>
                     <ul className="form-style-1">
                         <li>
-                            <label>Name of location <span className="required">*</span></label>
+                            <label>
+                                Name of location <span className="required">*</span>
+                            </label>
                             <input
                                 type="text"
                                 value={name}
@@ -51,7 +51,9 @@ function AddLocation() {
                             />
                         </li>
                         <li>
-                            <label>Longitude and Latitude <span className="required">*</span></label>
+                            <label>
+                                Longitude and Latitude <span className="required">*</span>
+                            </label>
                             <input
                                 type="text"
                                 value={longitude}
@@ -68,7 +70,10 @@ function AddLocation() {
                             />
                         </li>
                         <li>
-                            <label>I want this place for information about the location<span className="required">*</span></label>
+                            <label>
+                                I want this place for information about the location
+                                <span className="required">*</span>
+                            </label>
                             <textarea
                                 value={information}
                                 onChange={(event) => setInformation(event.target.value)}
@@ -81,6 +86,7 @@ function AddLocation() {
                     </ul>
                 </form>
             </div>
+            <ToastContainer position="bottom-right" />
         </div>
     );
 }
