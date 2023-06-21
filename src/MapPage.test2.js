@@ -1,3 +1,5 @@
+import { useState, useEffect } from 'react';
+
 test('mock data should be the same as fetched data', async () => {
     const mockData = [{ id: 1, name: 'Location 1' }, { id: 2, name: 'Location 2' }];
     const [data, setLocations] = useState([]);
