@@ -16,6 +16,7 @@ function App() {
     setLocation("map");
   };
 
+
   const handleMyLocationClick = () => {
     setLocation("mylocation");
   };
