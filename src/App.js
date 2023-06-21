@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import MapPage from "./pages/MapPage";
-import Sidebar from "./pages/Sidebar";
+import Sidebar from "./pages/sidebar";
 import AddLocation from "./pages/AddLocation";
 import MyLocation from "./pages/MyLocations";
 import LocationCrud from "./pages/LocationCrud"; // Import the LocationCrud component from the correct file

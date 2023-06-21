@@ -27,31 +27,33 @@ function MapPage() {
     };
 
     return isLoaded ? (
-        <GoogleMap
-            mapContainerStyle={{
-                height: "100%",
-                width: "100%",
-            }}
-            mapcontr
-            center={center}
-            zoom={5}
-            options={{
-                mapId: "806cab83403e7a7",
-            }}
-        >
-            {data.map((location) => (
-                <MarkerF
-                    key={location.id}
-                    position={{ lat: location.longtitude, lng: location.latitude }}
-                    icon={{
-                        url: location.checked ? "https://i.imgur.com/YlABihL.png" : "https://i.imgur.com/KInnqDU.png",
-                        //https://i.imgur.com/YlABihL.png
-                        //https://i.imgur.com/KInnqDU.png
-                        scaledSize: { width: 60, height: 60 },
-                    }}
-                />
-            ))}
-        </GoogleMap>
+        <div data-testid="MapPage-1">
+            <GoogleMap
+                mapContainerStyle={{
+                    height: "100%",
+                    width: "100%",
+                }}
+                mapcontr
+                center={center}
+                zoom={5}
+                options={{
+                    mapId: "806cab83403e7a7",
+                }}
+            >
+                {data.map((location) => (
+                    <MarkerF
+                        key={location.id}
+                        position={{ lat: location.longtitude, lng: location.latitude }}
+                        icon={{
+                            url: location.checked ? "https://i.imgur.com/YlABihL.png" : "https://i.imgur.com/KInnqDU.png",
+                            //https://i.imgur.com/YlABihL.png
+                            //https://i.imgur.com/KInnqDU.png
+                            scaledSize: { width: 60, height: 60 },
+                        }}
+                    />
+                ))}
+            </GoogleMap>
+        </div>
     ) : (
         <>Loading..</>
     );
